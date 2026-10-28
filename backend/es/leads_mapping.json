@@ -1,0 +1,30 @@
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "korean": { "type": "custom", "tokenizer": "nori_tokenizer" }
+      }
+    }
+  },
+  "mappings": {
+    "dynamic": "strict",
+    "properties": {
+      "id": { "type": "keyword" },
+      "case_id": { "type": "keyword" },
+      "category": { "type": "keyword" },
+      "source": { "type": "keyword" },
+      "title": { "type": "text", "analyzer": "korean" },
+      "summary": { "type": "text", "analyzer": "korean" },
+      "company_name": { "type": "text", "analyzer": "korean", "fields": { "raw": { "type": "keyword" } } },
+      "customer_id": { "type": "integer" },
+      "department": { "type": "keyword" },
+      "status": { "type": "keyword" },
+      "reviewer_id": { "type": "integer" },
+      "reporter_id": { "type": "integer" },
+      "stage": { "type": "keyword" },
+      "version": { "type": "integer" },
+      "created_at": { "type": "date" },
+      "updated_at": { "type": "date" }
+    }
+  }
+}
